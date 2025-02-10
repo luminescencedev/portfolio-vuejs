@@ -1,2 +1,6 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'PPEditorialNew-Italic';
+    src: url(./assets/fonts/PPEDITORIALNEW-ITALIC.OTF);
+}
