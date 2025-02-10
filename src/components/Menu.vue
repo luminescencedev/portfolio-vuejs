@@ -1,27 +1,27 @@
 <script lang="ts" setup>
 
+import toggleMenu from '../menuUtils.ts'
+
 </script>
 
 <template>
   <div class="menu w-screen h-screen top-[-100%] fixed left-0 z-[9] bg-white">
-    <div>
       <div class="flex items-center justify-center h-full">
         <ul class="flex flex-col gap-4">
           <li>
-            <router-link to="/">Home</router-link>
+            <router-link to="/" id="hover" class="cursor-none" @click="toggleMenu">Home</router-link>
           </li>
           <li>
-            <router-link to="/project">Projects</router-link>
+            <router-link to="/project" id="hover" class="cursor-none" @click="toggleMenu">Projects</router-link>
           </li>
           <li>
-            <router-link to="/about">About</router-link>
+            <router-link to="/about" id="hover" class="cursor-none" @click="toggleMenu">About</router-link>
           </li>
           <li>
-            <router-link to="/contact">Contact</router-link>
+            <router-link to="/contact" id="hover" class="cursor-none" @click="toggleMenu">Contact</router-link>
           </li>
         </ul>
       </div>
-    </div>
   </div>
 </template>
 
