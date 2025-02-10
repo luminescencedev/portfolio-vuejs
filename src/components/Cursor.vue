@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const cursorOutline = ref<HTMLElement | null>(null);
+const isMenuOpen = ref(false);
 
 const handleMouseOver = (event: MouseEvent) => {
     if ((event.target as HTMLElement).id === 'hover') {
@@ -34,12 +35,30 @@ onMounted(() => {
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
     document.addEventListener('mouseleave', handleMouseOut);
+
+    document.addEventListener('menuOpened', () => {
+        isMenuOpen.value = true;
+    });
+
+    document.addEventListener('menuClosed', () => {
+        isMenuOpen.value = false;
+    });
+});
+
+watch(isMenuOpen, (newValue) => {
+    if (cursorOutline.value) {
+        if (newValue) {
+            cursorOutline.value.classList.add('cursor-white');
+        } else {
+            cursorOutline.value.classList.remove('cursor-white');
+        }
+    }
 });
 </script>
 
 <template>
-<div class="z-100 fixed">
-    <div class="cursor-outline h-10 w-10 border border-black/90"></div>
+<div class="z-100 fixed cursor">
+    <div :class="{ 'cursor-white': isMenuOpen }" class="cursor-outline h-10 w-10 border border-black/90"></div>
 </div>
 </template>
 
@@ -51,6 +70,10 @@ onMounted(() => {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     pointer-events: none;
-    transition: width 0.3s ease, height 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-white {
+    border-color: #fff;
 }
 </style>

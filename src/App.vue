@@ -5,7 +5,6 @@ import Space from './components/Space.vue'
 import Menu from './components/Menu.vue'
 import Lenis from 'lenis';
 
-
 const lenis = new Lenis();
 
 function raf(time: number) {
@@ -19,7 +18,7 @@ requestAnimationFrame(raf);
 
 <template>
         <div class="app">
-            <Cursor/>
+            <Cursor />
             <Header />
             <Space/>
             <router-view v-slot="{ Component }" class="px-6">
