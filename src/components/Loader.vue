@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="loader-container fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black z-50">
+    <div class="loader-container fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-zinc-950 z-50">
         <div class="loader h-full w-full">
             <div class="flex items-center justify-center h-full">
                 <h1 class="text-9xl text-white font-[PPEditorialNew-Italic]">{{ count }} - 100</h1>

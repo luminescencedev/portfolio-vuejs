@@ -58,7 +58,7 @@ watch(isMenuOpen, (newValue) => {
 
 <template>
 <div class="z-100 fixed cursor">
-    <div :class="{ 'cursor-white': isMenuOpen }" class="cursor-outline h-10 w-10 border border-black/90"></div>
+    <div :class="{ 'cursor-white': isMenuOpen }" class="cursor-outline h-10 w-10 border border-zinc-950"></div>
 </div>
 </template>
 

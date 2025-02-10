@@ -33,7 +33,7 @@ defineProps({
 .square {
   width: 2px;
   height: 2px;
-  background-color: #000;
+  background-color: #09090b;
   display: inline-block;
   transition: all ease 0.3s;
 }

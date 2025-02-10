@@ -11,7 +11,10 @@ const handleToggleMenu = () => {
   if (isMenuOpen.value === false) {
     isBlendModeActive.value = true;
     toggleMenu();
+    isMenuOpen.value = !isMenuOpen.value;
   } else {
+    isBlendModeActive.value = true;
+    isMenuOpen.value = !isMenuOpen.value;
     toggleMenu();
   }
 };
@@ -39,10 +42,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header :class="{ 'text-white mix-blend-difference': isBlendModeActive }" class="py-10 fixed top-0 z-10 left-0 w-screen">
+  <header :class="{ 'text-white mix-blend-difference': isBlendModeActive }" class="py-10 fixed top-0 z-10 left-0 w-screen ">
     <div class="flex items-center justify-between px-16">
       <div class="flex items-center gap-10 h-6" id="hover">
-        <MagneticComponent :padding-x="60" :padding-y="60" @click="handleToggleMenu">
+        <MagneticComponent :padding-x="60" :padding-y="60" @click="handleToggleMenu ">
           <HomeButton :isMenuOpen="isBlendModeActive"/>
         </MagneticComponent>
         <MagneticComponent :padding-x="10" :padding-y="60">
@@ -54,10 +57,17 @@ onUnmounted(() => {
       
       <nav>
         <ul class="flex gap-16">
-          <li><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/project">Projects</router-link></MagneticComponent></li>
-          <li><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/about">About</router-link></MagneticComponent></li>
-          <li><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/contact">Contacts</router-link></MagneticComponent></li>
+          <transition name="fade">
+            <li v-if="!isBlendModeActive" class="fade"><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/project">Projects</router-link></MagneticComponent></li>
+          </transition>
+          <transition name="fade">
+            <li v-if="!isBlendModeActive" class="fade"><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/about">About</router-link></MagneticComponent></li>
+          </transition>
+          <transition name="fade">
+            <li v-if="!isBlendModeActive" class="fade"><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/contact">Contacts</router-link></MagneticComponent></li>
+          </transition>
         </ul>
+
       </nav>
     </div>
   </header>
@@ -67,4 +77,17 @@ onUnmounted(() => {
 .svg-white {
   filter: invert(1);
 }
+
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 </style>

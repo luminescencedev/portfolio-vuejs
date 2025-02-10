@@ -17,7 +17,7 @@ requestAnimationFrame(raf);
 </script>
 
 <template>
-        <div class="app">
+        <div class="app text-zinc-950 ">
             <Cursor />
             <Header />
             <Space/>

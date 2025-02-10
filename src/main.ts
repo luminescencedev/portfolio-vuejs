@@ -29,7 +29,7 @@ transition.style.position = 'fixed';
 transition.style.zIndex = '1000';
 transition.style.top = '0';
 transition.style.left = '0';
-transition.style.background = '#000';
+transition.style.background = '#09090b';
 
 router.beforeEach((from, to, next) => {
   const app = document.querySelector('#app');

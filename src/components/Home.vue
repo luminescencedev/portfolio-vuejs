@@ -7,7 +7,7 @@
     <p class="mt-4 text-lg">
       Explore my projects and learn more about my work.
     </p>
-    <router-link to="/project" class="mt-6 inline-block bg-black text-white py-2 px-4 rounded">
+    <router-link to="/project" class="mt-6 inline-block bg-zinc-950 text-white py-2 px-4 rounded">
       View Projects
     </router-link>
   </div>
