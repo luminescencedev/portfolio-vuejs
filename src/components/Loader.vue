@@ -28,7 +28,7 @@ onMounted(() => {
     <div class="loader-container fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-zinc-950 z-50">
         <div class="loader h-full w-full">
             <div class="flex items-center justify-center h-full">
-                <h1 class="text-9xl text-white font-[PPEditorialNew-Italic]">{{ count }} - 100</h1>
+                <h1 class="text-9xl text-white font-[PPEditorialNew-Italic]"><span class="text-outline">{{ count }}</span> - 100</h1>
             </div>
         </div>
     </div>
@@ -43,5 +43,10 @@ onMounted(() => {
     to {
         transform: translateY(-100%);
     }
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px white; 
 }
 </style>
