@@ -10,10 +10,6 @@ const handleToggleMenu = () => {
   toggleMenu();
 };
 
-
-
-
-
 </script>
 
 <template>
@@ -21,25 +17,25 @@ const handleToggleMenu = () => {
     <div class="flex items-center justify-center h-full w-[40vw]">
       <ul class="flex flex-col gap-4 w-full font-[Dirtyline] text-white text-9xl">
         <li class="flex justify-end gap-6">
-          <router-link to="/" id="hover" class="cursor-none " @click="handleToggleMenu">Home</router-link>
+          <router-link to="/" id="hover" class="cursor-none link-1" @click="handleToggleMenu">Home</router-link>
           <div class="number flex flex-col">
             <span class="text-3xl">1</span>
           </div>
         </li>
         <li class="flex gap-6">
-          <router-link to="/project" id="hover" class="cursor-none " @click="handleToggleMenu">Projects</router-link>
+          <router-link to="/project" id="hover" class="cursor-none link-2 " @click="handleToggleMenu">Projects</router-link>
           <div class="number flex flex-col">
             <span class="text-3xl">2</span>
           </div>
         </li>
         <li class="flex justify-end gap-6">
-          <router-link to="/about" id="hover" class="cursor-none " @click="handleToggleMenu">About</router-link>
+          <router-link to="/about" id="hover" class="cursor-none link-3 " @click="handleToggleMenu">About</router-link>
           <div class="number flex flex-col">
             <span class="text-3xl">3</span>
           </div>
         </li>
         <li class="flex gap-6">
-          <router-link to="/contact" id="hover" class="cursor-none " @click="handleToggleMenu">Contact</router-link>
+          <router-link to="/contact" id="hover" class="cursor-none link-4" @click="handleToggleMenu">Contact</router-link>
           <div class="number flex flex-col">
             <span class="text-3xl">4</span>
           </div>
@@ -54,15 +50,23 @@ const handleToggleMenu = () => {
   transition: top 1s ease;
 }
 
-
-#hover {
+.router-link-exact-active {
   transition: color 0.5s ease-in-out, -webkit-text-stroke 1s ease-in-out;
-  /* Gardez la propriété -webkit-text-stroke initiale ici pour une transition fluide */
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.router-link-exact-active:hover {
+  color: white;
   -webkit-text-stroke: 1px transparent;
 }
 
+#hover:not(.router-link-exact-active) {
+  transition: color 0.5s ease-in-out, -webkit-text-stroke 1s ease-in-out;
+  -webkit-text-stroke: 1px transparent;
+}
 
-#hover:hover {
+#hover:hover:not(.router-link-exact-active) {
   color: transparent;
   -webkit-text-stroke: 1px white; 
 }
@@ -70,6 +74,4 @@ const handleToggleMenu = () => {
 #hover:hover+.number{
   justify-content: flex-end;
 }
-
-
 </style>

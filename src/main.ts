@@ -23,22 +23,11 @@ const router = createRouter({
 
 const transition = document.createElement('div');
 transition.id = 'transition';
-transition.style.height = '120vh';
-transition.style.width = '100vw';
-transition.style.position = 'fixed';
-transition.style.zIndex = '1000';
-transition.style.top = '0';
-transition.style.left = '0';
-transition.style.background = '#09090b';
+transition.className = 'h-[120vh] w-[100vw] fixed top-0 left-0 bg-[#09090b] z-[1000]';
 
-const pathName = document.createElement('li');
+const pathName = document.createElement('div');
     pathName.id = 'pathName';
-    pathName.style.position = 'absolute';
-    pathName.style.top = '50%';
-    pathName.style.left = '50%';
-    pathName.style.transform = 'translate(-50%, -50%)';
-    pathName.style.color = 'white';
-    pathName.style.fontSize = '3rem';
+    pathName.className = 'font-[Dirtyline] text-9xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white';
 
 router.beforeEach((from, to, next) => {
   const app = document.querySelector('#app');

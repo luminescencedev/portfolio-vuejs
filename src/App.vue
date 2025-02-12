@@ -16,7 +16,7 @@ requestAnimationFrame(raf);
 </script>
 
 <template>
-        <div class="app text-zinc-950 ">
+        <div class="app text-zinc-950 h-screen w-screen">
             <Cursor />
             <Header />
             <router-view v-slot="{ Component }" class="px-6">
