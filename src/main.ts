@@ -29,9 +29,11 @@ const pathName = document.createElement('div');
     pathName.id = 'pathName';
     pathName.className = 'font-[Dirtyline] text-9xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white';
 
-router.beforeEach((from, to, next) => {
+router.beforeEach((from, to ,  next) => {
   const app = document.querySelector('#app');
   const isInialized = app?.classList.contains('initialized');
+  const path = to.path;
+  console.log(path);
 
   if (!isInialized) {
     app?.classList.add('initialized');
@@ -87,8 +89,10 @@ router.afterEach((from) => {
         y: '100%',
         ease: 'power2.inOut',
         onComplete: () => {
-        transition?.removeChild(pathName);
-        transition?.remove();
+        if (transition.contains(pathName)) {
+            transition.removeChild(pathName);
+        }
+        transition.remove();
         },
     });
 });

@@ -14,7 +14,7 @@ const handleToggleMenu = (isRouteChanging: boolean) => {
 
 <template>
   <div class="menu w-screen h-screen top-[-100%] fixed left-0 z-[9] bg-zinc-950 flex justify-center">
-    <div class="flex items-center justify-center h-full w-[40vw]">
+    <div class="flex items-center justify-center h-full w-[50vw]">
       <ul class="flex flex-col gap-4 w-full font-[Dirtyline] text-white text-9xl">
         <li class="flex justify-end gap-6">
           <router-link to="/" id="hover" class="cursor-none link-1" @click="() => handleToggleMenu(true)">Home</router-link>
