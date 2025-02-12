@@ -23,13 +23,22 @@ const router = createRouter({
 
 const transition = document.createElement('div');
 transition.id = 'transition';
-transition.style.height = '100vh';
+transition.style.height = '120vh';
 transition.style.width = '100vw';
 transition.style.position = 'fixed';
 transition.style.zIndex = '1000';
 transition.style.top = '0';
 transition.style.left = '0';
 transition.style.background = '#09090b';
+
+const pathName = document.createElement('li');
+    pathName.id = 'pathName';
+    pathName.style.position = 'absolute';
+    pathName.style.top = '50%';
+    pathName.style.left = '50%';
+    pathName.style.transform = 'translate(-50%, -50%)';
+    pathName.style.color = 'white';
+    pathName.style.fontSize = '3rem';
 
 router.beforeEach((from, to, next) => {
   const app = document.querySelector('#app');
@@ -45,6 +54,13 @@ router.beforeEach((from, to, next) => {
   } else {
     app?.appendChild(transition);
 
+    if (from.path === '/') {
+      pathName.textContent = 'Home';
+    } else {
+      pathName.textContent = from.path.slice(1).charAt(0).toUpperCase() + from.path.slice(2);
+    }
+    transition?.appendChild(pathName);
+
     gsap.from(transition, {
       y: '-100%',
       duration: 0.5,
@@ -52,29 +68,37 @@ router.beforeEach((from, to, next) => {
     });
 
     gsap.to(transition, {
-      duration: 1.5,
-      y: 0,
+      duration: 1.8,
+      y: '-10%',
       ease: 'power2.inOut',
       onComplete: () => {
         next();
+        transition?.removeChild(pathName);
       },
     });
   }
 });
 
-router.afterEach(() => {
-
+router.afterEach((from) => {
+    
+    if (from.path === '/') {
+      pathName.textContent = 'Home';
+    } else {
+      pathName.textContent = from.path.slice(1).charAt(0).toUpperCase() + from.path.slice(2);
+    }
+    transition?.appendChild(pathName);
     gsap.from(transition, {
-        duration: 0.5,
-        y: 0,
+        duration: 1,
+        y: '-10%',
         ease: 'power2.inOut',
     });
 
     gsap.to(transition, {
-        duration: 1.5,
+        duration: 2,
         y: '100%',
         ease: 'power2.inOut',
         onComplete: () => {
+        transition?.removeChild(pathName);
         transition?.remove();
         },
     });

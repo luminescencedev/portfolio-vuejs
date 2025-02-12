@@ -2,5 +2,25 @@
 
 @font-face {
     font-family: 'PPEditorialNew-Italic';
-    src: url(./assets/fonts/PPEDITORIALNEW-ITALIC.OTF);
+    src: url(assets/fonts/PPEDITORIALNEW-ITALIC.OTF);
+}
+
+@font-face {
+  font-family: 'PPMondwest';
+  src: url(assets/fonts/PPMONDWEST-REGULAR.OTF); 
+}
+
+@font-face {
+  font-family: 'GreatVibes';
+  src: url(assets/fonts/GREATVIBES-REGULAR.TTF);
+}
+
+@font-face {
+  font-family: 'PPEditorialNewRegular';
+  src: url(assets/fonts/PPEDITORIALNEW-REGULAR.OTF); 
+}
+
+@font-face {
+  font-family: 'Dirtyline';
+  src: url(assets/fonts/DIRTYLINE.OTF); 
 }

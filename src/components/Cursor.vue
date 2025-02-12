@@ -5,6 +5,7 @@ const cursorOutline = ref<HTMLElement | null>(null);
 const isMenuOpen = ref(false);
 
 const handleMouseOver = (event: MouseEvent) => {
+    
     if ((event.target as HTMLElement).id === 'hover') {
         cursorOutline.value!.style.width = '60px';
         cursorOutline.value!.style.height = '60px';
