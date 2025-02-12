@@ -7,15 +7,16 @@ import toggleMenu from '../menuUtils.ts';
 const isMenuOpen = ref(false);
 const isBlendModeActive = ref(false);
 
+
 const handleToggleMenu = () => {
   if (isMenuOpen.value === false) {
     isBlendModeActive.value = true;
-    toggleMenu();
+    toggleMenu(false);
     isMenuOpen.value = !isMenuOpen.value;
   } else {
     isBlendModeActive.value = true;
     isMenuOpen.value = !isMenuOpen.value;
-    toggleMenu();
+    toggleMenu(false);
   }
 };
 
@@ -26,7 +27,7 @@ const handleMenuOpened = () => {
 const handleMenuClosed = () => {
   isMenuOpen.value = false;
   setTimeout(() => {
-  isBlendModeActive.value = false;
+    isBlendModeActive.value = false;
   }, 500);
 };
 
@@ -45,7 +46,7 @@ onUnmounted(() => {
   <header :class="{ 'text-white mix-blend-difference': isBlendModeActive }" class="py-10 fixed top-0 z-10 left-0 w-screen ">
     <div class="flex items-center justify-between px-16">
       <div class="flex items-center gap-10 h-6" id="hover">
-        <MagneticComponent :padding-x="60" :padding-y="60" @click="handleToggleMenu ">
+        <MagneticComponent :padding-x="60" :padding-y="60" @click="handleToggleMenu">
           <HomeButton :isMenuOpen="isBlendModeActive"/>
         </MagneticComponent>
         <MagneticComponent :padding-x="10" :padding-y="60">
@@ -67,7 +68,6 @@ onUnmounted(() => {
             <li v-if="!isBlendModeActive" class="fade"><MagneticComponent :padding-x="10" :padding-y="60"><router-link class="cursor-none" id="hover" to="/contact">Contacts</router-link></MagneticComponent></li>
           </transition>
         </ul>
-
       </nav>
     </div>
   </header>
@@ -78,8 +78,6 @@ onUnmounted(() => {
   filter: invert(1);
 }
 
-
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.35s ease;
@@ -89,5 +87,4 @@ onUnmounted(() => {
 .fade-leave-to {
   opacity: 0;
 }
-
 </style>
