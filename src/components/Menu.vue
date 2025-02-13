@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import toggleMenu from '../menuUtils.ts';
+import toggleMenu from '../composables/menuUtils.ts';
 
 const isMenuOpen = ref(false);
 

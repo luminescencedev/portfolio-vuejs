@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import MagneticComponent from './MagneticComponent.vue';
 import HomeButton from './HomeButton.vue';
-import toggleMenu from '../menuUtils.ts';
+import toggleMenu from '../composables/menuUtils.ts';
 
 const isMenuOpen = ref(false);
 const isBlendModeActive = ref(false);

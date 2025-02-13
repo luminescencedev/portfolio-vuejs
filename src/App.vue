@@ -2,6 +2,7 @@
 import Header from './components/Header.vue'
 import Cursor from './components/Cursor.vue'
 import Menu from './components/Menu.vue'
+import Space from './components/Space.vue'
 import Lenis from 'lenis';
 
 const lenis = new Lenis();
@@ -19,6 +20,7 @@ requestAnimationFrame(raf);
         <div class="app text-zinc-950 h-screen w-screen">
             <Cursor />
             <Header />
+            <Space />
             <router-view v-slot="{ Component }" class="px-6">
                 <transition name="page" mode="out-in">
                     <component :is="Component" />

@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: 'PPEditorialNewRegular';
+  src: url(assets/fonts/PPEDITORIALNEW-REGULAR.OTF); 
+}
+
+@font-face {
   font-family: 'PPMondwest';
   src: url(assets/fonts/PPMONDWEST-REGULAR.OTF); 
 }
@@ -16,11 +21,10 @@
 }
 
 @font-face {
-  font-family: 'PPEditorialNewRegular';
-  src: url(assets/fonts/PPEDITORIALNEW-REGULAR.OTF); 
-}
-
-@font-face {
   font-family: 'Dirtyline';
   src: url(assets/fonts/DIRTYLINE.OTF); 
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 }

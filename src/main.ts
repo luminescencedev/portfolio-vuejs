@@ -31,9 +31,9 @@ const pathName = document.createElement('div');
 
 router.beforeEach((from, to ,  next) => {
   const app = document.querySelector('#app');
+  console.log(to.path);
   const isInialized = app?.classList.contains('initialized');
-  const path = to.path;
-  console.log(path);
+  
 
   if (!isInialized) {
     app?.classList.add('initialized');
