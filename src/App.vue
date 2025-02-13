@@ -21,9 +21,9 @@ requestAnimationFrame(raf);
             <Cursor />
             <Header />
             <Space />
-            <router-view v-slot="{ Component }" class="px-6">
+            <router-view v-slot="{ Component }">
                 <transition name="page" mode="out-in">
-                    <component :is="Component" />
+                    <component :is="Component" class="px-6" />
                 </transition>
             </router-view>
             <Menu/>
