@@ -2,9 +2,7 @@
 </script>
 
 <template>
-  <div class="h-[calc(100vh-104px)] w-screen px-6 pb-6">
-    <!-- peut etre retirer la box sahdow -->
-    <div class="h-full w-full rounded-2xl box-shadow px-10 pt-10 text-9xl  font-[PPEditorialNewRegular] ">
+  <div class="h-[calc(100vh-104px)] w-screen px-6 pb-6 text-9xl  font-[PPEditorialNewRegular]">
       <div class=" h-[25%] flex flex-row gap-4">
         <div class="w-[55%] flex justify-between">
           <p>A<span class="font-[PPEditorialNew-Italic]">r</span>th<span class="font-[PPEditorialNew-Italic]">u</span>r</p>
@@ -30,11 +28,10 @@
 
         </div>
       </div>
-      <div class="h-[25%] flex flex-row gap-4">
+      <div class="h-[25%] flex flex-row gap-4 justify-end">
         <p>Based in Paris <span class="font-[PPMondwest]">&#9748;</span></p>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>

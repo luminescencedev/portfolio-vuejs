@@ -1,14 +1,9 @@
 @import "tailwindcss";
 
 body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
+  overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
 
 @font-face {
     font-family: 'PPEditorialNew-Italic';

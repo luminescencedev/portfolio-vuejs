@@ -71,7 +71,6 @@ router.beforeEach((from, to ,  next) => {
 });
 
 router.afterEach((from) => {
-    
     if (from.path === '/') {
       pathName.textContent = 'Home';
     } else {
